@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+	body,
+	html {
+	height:100%
+	}
     </style>
 </head>
 
@@ -38,13 +42,12 @@
     
     const goHome = new Date('2021/9/30 18:30:00').getTime()
     let nowDate = new Date().getTime()
-    let diff = goHome - nowDate
-    box.innerText = formatSec(diff / 1000)
+    
     setInterval(() => {
         nowDate = new Date().getTime()
         diff = goHome - nowDate
         
-        box.innerText = formatSec(diff / 1000)
+        box.innerText = "距离下班："+formatSec(diff / 1000)
     }, 1000);
 
 </script>
