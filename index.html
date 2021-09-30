@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    距离下班
+</body>
+<script>
+    function formatSec(time) {
+        if (time === undefined) {
+            return ''
+        }
+
+        if (time?.includes?.(':')) {
+            return time
+        }
+
+        time = parseInt(time)
+        let ss = time % 60
+        let mm = parseInt(time / 60 % 60)
+        let hh = parseInt(time / 60 / 60)
+        ss = ss < 10 ? '0' + ss : ss
+        mm = mm < 10 ? '0' + mm : mm
+        hh = hh < 10 ? '0' + hh : hh
+        return `${hh.toString()}:${mm.toString()}:${ss.toString()}`
+    }
+
+    let box = document.createElement('div')
+    document.body.appendChild(box)
+    
+    const goHome = new Date('2021/9/30 18:30:00').getTime()
+    let nowDate = new Date().getTime()
+    let diff = goHome - nowDate
+    box.innerText = formatSec(diff / 1000)
+    setInterval(() => {
+        nowDate = new Date().getTime()
+        diff = goHome - nowDate
+        
+        box.innerText = formatSec(diff / 1000)
+    }, 1000);
+
+</script>
+
+</html>
