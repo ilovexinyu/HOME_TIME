@@ -15,7 +15,7 @@
 </head>
 
 <body style="background:url(http://liveshowoss.sobeylingyun.com/2021/9/23/eba8745e-1a5e-e499-b8de-5f5ab26dc7c5.png);background-size:100% 100%;">
-   <span id="time" style="color:rebeccapurple;font-size: 50px;">距离下班</span>
+   <span id="time" style="color:white;font-size: 50px;">距离下班</span>
 </body>
 <script>
     function formatSec(time) {
@@ -43,6 +43,10 @@
     const goHome = new Date('2021/9/30 18:30:00').getTime()
     let nowDate = new Date().getTime()
     
+	nowDate = new Date().getTime()
+	diff = goHome - nowDate
+	box.innerText = "距离下班："+formatSec(diff / 1000)
+	
     setInterval(() => {
         nowDate = new Date().getTime()
         diff = goHome - nowDate
