@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>移动互联业务部</title>
     <style>
 	body,
 	html {
@@ -15,7 +15,7 @@
 </head>
 
 <body style="background:url(http://liveshowoss.sobeylingyun.com/2021/9/23/eba8745e-1a5e-e499-b8de-5f5ab26dc7c5.png);background-size:100% 100%;">
-   <span id="time" style="color:white;font-size: 50px;">距离下班</span>
+   <span id="time" style="color:white;font-size: 50px;"></span>
 </body>
 <script>
     function formatSec(time) {
@@ -45,13 +45,13 @@
     
 	nowDate = new Date().getTime()
 	diff = goHome - nowDate
-	box.innerText = "距离下班："+formatSec(diff / 1000)
+	box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
 	
     setInterval(() => {
         nowDate = new Date().getTime()
         diff = goHome - nowDate
         
-        box.innerText = "距离下班："+formatSec(diff / 1000)
+        box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
     }, 1000);
 
 </script>
