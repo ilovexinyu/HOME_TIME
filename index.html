@@ -34,7 +34,7 @@
         ss = ss < 10 ? '0' + ss : ss
         mm = mm < 10 ? '0' + mm : mm
         hh = hh < 10 ? '0' + hh : hh
-        return `${hh.toString()}:${mm.toString()}:${ss.toString()}`
+        return `${hh.toString()}时${mm.toString()}分${ss.toString()}秒`
     }
 
     let box = document.getElementById('time')
