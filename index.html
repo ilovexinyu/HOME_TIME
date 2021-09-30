@@ -38,21 +38,52 @@
     }
 
     let box = document.getElementById('time')
-   
-    
-    const goHome = new Date('2021/9/30 18:30:00').getTime()
-    let nowDate = new Date().getTime()
-    
-	nowDate = new Date().getTime()
-	diff = goHome - nowDate
-	box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
 	
-    setInterval(() => {
-        nowDate = new Date().getTime()
-        diff = goHome - nowDate
-        
-        box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
-    }, 1000);
+	var date = new Date();
+	
+	
+	
+	var year = date.getFullYear(); //得到年份
+	var month = date.getMonth()+1;//得到月份
+	var day = date.getDate();//得到日期
+	var zj = date.getDay();//得到周几
+	if(zj ==0 || zj==6) {
+	
+		box.innerText = "社畜你今天放周末，还看个屁"
+		
+	} else {
+		var str = year+"/"+month+"/"+day
+	
+	
+		const goHome = new Date(str+' 18:30:00').getTime()
+		
+		let nowDate = new Date().getTime()
+		
+		nowDate = new Date().getTime()
+		diff = goHome - nowDate
+		if(diff>0) {
+			box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
+		}else {
+			box.innerText = "社畜下班都："+formatSec((-diff) / 1000)+"还不快去浪"
+		}
+		
+		
+		setInterval(() => {
+			nowDate = new Date().getTime()
+			diff = goHome - nowDate
+			if(diff>0) {
+				box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
+			}else {
+				box.innerText = "社畜下班都："+formatSec((-diff) / 1000)+"还不快去浪"
+			}
+			
+		}, 1000);
+	
+	}
+	
+	
+	
+    
 
 </script>
 
