@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>移动互联业务部</title>
+    <title>扫码移车c</title>
     <style>
 	body,
 	html {
@@ -14,77 +14,11 @@
     </style>
 </head>
 
-<body style="background:url(http://liveshowoss.sobeylingyun.com/2021/9/23/eba8745e-1a5e-e499-b8de-5f5ab26dc7c5.png);background-size:100% 100%;">
-   <a href="tel:17791761219">电话移车</a>
+<body>
+   <p>刘先生： 17313149052  <a href="tel:17313149052"> 呼叫/a>  </p>
+   <p>申先生： 17313149053  <a href="tel:17313149053"> 呼叫/a>  </p>
+	
 </body>
-<script>
-    function formatSec(time) {
-        if (time === undefined) {
-            return ''
-        }
 
-        if (time?.includes?.(':')) {
-            return time
-        }
-
-        time = parseInt(time)
-        let ss = time % 60
-        let mm = parseInt(time / 60 % 60)
-        let hh = parseInt(time / 60 / 60)
-        ss = ss < 10 ? '0' + ss : ss
-        mm = mm < 10 ? '0' + mm : mm
-        hh = hh < 10 ? '0' + hh : hh
-        return `${hh.toString()}时${mm.toString()}分${ss.toString()}秒`
-    }
-
-    let box = document.getElementById('time')
-	
-	var date = new Date();
-	
-	
-	
-	var year = date.getFullYear(); //得到年份
-	var month = date.getMonth()+1;//得到月份
-	var day = date.getDate();//得到日期
-	var zj = date.getDay();//得到周几
-	if(zj ==0 || zj==6) {
-	
-		box.innerText = "社畜你今天放周末，还看个屁"
-		
-	} else {
-		var str = year+"/"+month+"/"+day
-	
-	
-		const goHome = new Date(str+' 18:30:00').getTime()
-		
-		let nowDate = new Date().getTime()
-		
-		nowDate = new Date().getTime()
-		diff = goHome - nowDate
-		if(diff>0) {
-			box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
-		}else {
-			box.innerText = "社畜下班都："+formatSec((-diff) / 1000)+"还不快去浪"
-		}
-		
-		
-		setInterval(() => {
-			nowDate = new Date().getTime()
-			diff = goHome - nowDate
-			if(diff>0) {
-				box.innerText = "社畜你距离下班还有："+formatSec(diff / 1000)
-			}else {
-				box.innerText = "社畜下班都："+formatSec((-diff) / 1000)+"还不快去浪"
-			}
-			
-		}, 1000);
-	
-	}
-	
-	
-	
-    
-
-</script>
 
 </html>
